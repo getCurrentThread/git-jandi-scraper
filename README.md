@@ -26,10 +26,10 @@ gitlab 프로필을 공개로 하지 않아서 크롤링이 불가능한 경우�
 ## 패키지 설치
 
 ```shell
-$pip install -r requirements.txt
+$ pip install -r requirements.txt
 ```
 
-### 정보 입력
+## 정보 입력
 
 - 필요한 코드 수정 목록
   ```python
@@ -47,30 +47,40 @@ $pip install -r requirements.txt
 
 - **secrets.json**
 
-```json
-{
-    "COACH_ID" : "",
-    "COACH_PASSWORD" : ""
-}
-```
+  ```json
+  {
+      "COACH_ID" : "",
+      "COACH_PASSWORD" : ""
+  }
+  ```
 
 - **members.csv**
 
-크롤링 할 gitlab 아이디 목록이 들어있는 csv파일
+  크롤링 할 gitlab 아이디 목록이 들어있는 csv파일
 
-이 목록에 있는 순서대로 크롤링 합니다.
+  이 목록에 있는 순서대로 크롤링 합니다.
 
+  ```
+  member0,홍길동
+  member1,나열한
+  member2,김이열
+  ...
+  ```
+
+## 실행
+> Windows의 경우 run.bat 파일을 실행하면 됩니다.
+```bash
+cd <current_directory>
+python3 -m venv .venv
+pip3 install -r requirements.txt
+python3 ./main.py
 ```
-member0,홍길동
-member1,나열한
-member2,김이열
-...
-```
 
-### 3. 결과물(예시)
-- **git_check_result.csv**
+## 결과물(예시)
 
-각 gitlab 잔디에 찍힌 숫자를 나열한 파일 (엑셀이 편함)
+**git_check_result.csv**
+
+각 gitlab 잔디에 찍힌 숫자를 나열한 파일 (엑셀 뷰어 사용 시 가독성↑)
 
 ```
 (아이디), (커밋 수 ... ) 
